@@ -1,6 +1,19 @@
 <html>
 	<head>
 		<title>Mukilteo T-Dock Current Measurement Project</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="libs/simpleLightbox/simpleLightbox.min.js"></script>
+		<link href="libs/simpleLightbox/simpleLightbox.min.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".imageGallery1 a").simpleLightbox();
+			});
+		</script>
+		<style>
+			.imageGallery1 a img {
+				width: 240px;
+			}
+		</style>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-122571584-1"></script>
 		<script>
@@ -26,6 +39,10 @@
 		There is also a precise (hopefully) map of Mukilteo coming up soon which I'm working on too. I may post work in progress here as well so you can tell me if I've 
 missed any features.
 		<br/>
-		<img src="img/mukilteo-t-dock.jpg"/>
+		<div class="imageGallery1">
+			<a href="img/mukilteo-t-dock.jpg" title="Mukilteo T-Dock dive site"><img src="img/mukilteo-t-dock.jpg"/></a>
+			<a href="img/first-meter-deployment.jpg" title="First meter deployment on 7/19/2018"><img 
+src="img/first-meter-deployment.jpg"/></a>
+		</div>
 	</body>
 </html>
