@@ -1,2 +1,2 @@
 #!/bin/bash
-aws s3 cp index.html s3://mukilteo.pnwdiving.org/
+aws s3 cp . s3://mukilteo.pnwdiving.org/ --recursive --exclude ".git/*"
