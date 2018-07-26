@@ -1,49 +1,64 @@
 <html>
-	<head> 
-		<title>Mukilteo T-Dock Current Measurement Project</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="libs/simpleLightbox/simpleLightbox.min.js"></script>
-		<link href="libs/simpleLightbox/simpleLightbox.min.css" rel="stylesheet" type="text/css">
-		<script type="text/javascript">
-			$(document).ready(function(){
-				$(".imageGallery1 a").simpleLightbox();
-			});
-		</script>
-		<style>
-			.imageGallery1 a img {
-				width: 240px;
-			}
-		</style>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-122571584-1"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
+<head>
+    <title>Mukilteo T-Dock Current Measurement Project</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="libs/simpleLightbox/simpleLightbox.min.js"></script>
+    <link href="libs/simpleLightbox/simpleLightbox.min.css" rel="stylesheet" type="text/css">
+    <script src="https://code.highcharts.com/highcharts.src.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <!--<script src="https://www.highcharts.com/media/com_demo/js/highslide.config.js" charset="utf-8"></script>-->
+    <link rel="stylesheet" type="text/css" href="https://www.highcharts.com/media/com_demo/css/highslide.css"/>
+    <script src="js/current-chart.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".imageGallery1 a").simpleLightbox();
+        });
+    </script>
+    <style>
+        .imageGallery1 a img {
+            width: 240px;
+        }
+    </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122571584-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-		  gtag('config', 'UA-122571584-1');
-		</script>
-	</head>
-	<body>
-		<h1>Mukilteo Current Measurements Project</h1>
-		Hello fellow divers!<br/>
-		This is an attempt to build a cheap DYI current meter and establish more or less regular mesurements of current at Mukilteo T-Dock.<br/>
-		This site just got created and will be updated soon with following:
-		<ul>
-			<li>Visualization of latest current measurements</li>
-			<li>Some comment/feedback section (I'm thinking about some crowd-sourcing calibration for the meter)</li>
-		</ul>
-		Meanwhile, should you be interested, you're welcome to visit project page at hackerday.io:
-		<a href="https://hackaday.io/project/158083-cheap-underwater-tilt-current-sensor">https://hackaday.io/project/158083-cheap-underwater-tilt-current-sensor</a>
-		<br/>
-		There is also a precise (hopefully) map of Mukilteo coming up soon which I'm working on too. I may post work in progress here as well so you can tell me if I've 
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-122571584-1');
+    </script>
+</head>
+<body>
+<h1>Mukilteo Current Measurements Project</h1>
+Hello fellow divers!<br/>
+This is an attempt to build a cheap DYI current meter and establish more or less regular mesurements of current at
+Mukilteo T-Dock.<br/>
+This site just got created and will be updated soon with following:
+<ul>
+    <li>Visualization of latest current measurements (see below some of the first insights from the first buoy
+        deployment!!!)
+    </li>
+    <li>Some comment/feedback section (I'm thinking about some crowd-sourcing calibration for the meter)</li>
+</ul>
+Meanwhile, should you be interested, you're welcome to visit project page at hackerday.io:
+<a href="https://hackaday.io/project/158083-cheap-underwater-tilt-current-sensor">https://hackaday.io/project/158083-cheap-underwater-tilt-current-sensor</a>
+<br/>
+There is also a precise (hopefully) map of Mukilteo coming up soon which I'm working on too. I may post work in progress
+here as well so you can tell me if I've
 missed any features.
-		<br/>
-		<div class="imageGallery1">
-			<a href="img/mukilteo-t-dock.jpg" title="Mukilteo T-Dock dive site"><img src="img/mukilteo-t-dock.jpg"/></a>
-			<a href="img/first-meter-deployment.jpg" title="First meter deployment on 7/19/2018"><img 
-src="img/first-meter-deployment.jpg"/></a>
-			<a href="img/geodome-sign.jpg" title="Sketch of sign next to the geodome"><img src="img/geodome-sign.jpg"/></a>
-		</div>
-	</body>
+<br/>
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<div id="container2" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<div class="imageGallery1">
+    <a href="img/mukilteo-t-dock.jpg" title="Mukilteo T-Dock dive site"><img src="img/mukilteo-t-dock.jpg"/></a>
+    <a href="img/first-meter-deployment.jpg" title="First meter deployment on 7/19/2018"><img
+            src="img/first-meter-deployment.jpg"/></a>
+    <a href="img/geodome-sign.jpg" title="Sketch of sign next to the geodome"><img src="img/geodome-sign.jpg"/></a>
+</div>
+</body>
 </html>
