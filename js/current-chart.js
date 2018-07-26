@@ -7,7 +7,7 @@ function loadChart(day) {
             text: 'Meter measurements vs. Glendale station tide predictions'
         },
         data: {
-            csvURL: 'http://localhost/data/reports/' + day + '.csv',
+            csvURL: 'http://mukilteo.pnwdiving.org/data/reports/' + day + '.csv',
             beforeParse: function (csv) {
                 return csv.replace(/\n\n/g, '\n');
             }
