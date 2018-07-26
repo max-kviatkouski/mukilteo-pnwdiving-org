@@ -4,7 +4,7 @@ function loadChart(day) {
             type: 'spline'
         },
         title: {
-            text: 'Mukilteo measured current'
+            text: 'Meter measurements vs. Glendale station tide predictions'
         },
         data: {
             csvURL: 'http://localhost/data/reports/' + day + '.csv',
@@ -22,12 +22,27 @@ function loadChart(day) {
             title: {
                 text: 'Tilt angle (degrees)'
             },
+            lineColor: 'rgb(124, 181, 236)',
+            lineWidth: 2,
             max: 45,
-            visible: true
+            visible: true,
+            plotBands: [{
+                from: 5,
+                to: 10,
+                color: 'rgba(255, 243, 186, 0.4)',
+                label: {
+                    text: 'Approximately 0.2kt',
+                    style: {
+                        color: '#606060'
+                    }
+                }
+            }]
         }, {
             title: {
                 text: 'Tide height (ft)'
             },
+            lineColor: 'rgb(67, 67, 72)',
+            lineWidth: 2,
             max: 14,
             opposite: true,
             visible: true
@@ -37,7 +52,7 @@ function loadChart(day) {
                 connectNulls: true
             }
         },
-        series: [{yAxis:0}, {yAxis:1}]
+        series: [{yAxis: 0}, {yAxis: 1}]
     });
 }
 
