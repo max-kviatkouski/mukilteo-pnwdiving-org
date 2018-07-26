@@ -7,7 +7,7 @@ $(function () {
             text: 'Mukilteo measured current'
         },
         data: {
-            csvURL: 'http://localhost:63342/pyboard-current-meter-logger/data/reports/2018-07-20.tilt-from-vertical.10T..9447814.tides.csv',
+            csvURL: 'http://localhost/data/reports/test-report.csv',
             beforeParse: function (csv) {
                 return csv.replace(/\n\n/g, '\n');
             }
