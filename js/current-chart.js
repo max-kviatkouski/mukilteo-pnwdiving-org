@@ -1,4 +1,4 @@
-$(function () {
+function loadChart(day) {
     var myChart = Highcharts.chart('container', {
         chart: {
             type: 'spline'
@@ -7,7 +7,7 @@ $(function () {
             text: 'Mukilteo measured current'
         },
         data: {
-            csvURL: 'http://localhost/data/reports/2018-07-22.csv',
+            csvURL: 'http://localhost/data/reports/' + day + '.csv',
             beforeParse: function (csv) {
                 return csv.replace(/\n\n/g, '\n');
             }
@@ -39,4 +39,9 @@ $(function () {
         },
         series: [{yAxis:0}, {yAxis:1}]
     });
+}
+
+$(function () {
+    loadChart('2018-07-20')
+    $('.pretty').prettyDropdown();
 });

@@ -8,6 +8,8 @@
     <script src="https://code.highcharts.com/modules/data.js"></script>
     <!--<script src="https://www.highcharts.com/media/com_demo/js/highslide.config.js" charset="utf-8"></script>-->
     <link rel="stylesheet" type="text/css" href="https://www.highcharts.com/media/com_demo/css/highslide.css"/>
+    <link rel="stylesheet" href="libs/prettydropdowns/prettydropdowns.css">
+    <script src="libs/prettydropdowns/jquery.prettydropdowns.js"></script>
     <script src="js/current-chart.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -52,6 +54,12 @@ There is also a precise (hopefully) map of Mukilteo coming up soon which I'm wor
 here as well so you can tell me if I've
 missed any features.
 <br/>
+<label for="size">With event handler:</label><br>
+<select id="size" name="size" class="pretty" onchange="loadChart(value)">
+  <option>2018-07-20</option>
+  <option>2018-07-21</option>
+  <option>2018-07-22</option>
+</select>
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 <div class="imageGallery1">
     <a href="img/mukilteo-t-dock.jpg" title="Mukilteo T-Dock dive site"><img src="img/mukilteo-t-dock.jpg"/></a>
