@@ -7,7 +7,7 @@ $(function () {
             text: 'Mukilteo measured current'
         },
         data: {
-            csvURL: 'http://localhost/data/reports/test-report.csv',
+            csvURL: 'http://localhost/data/reports/2018-07-22.csv',
             beforeParse: function (csv) {
                 return csv.replace(/\n\n/g, '\n');
             }
