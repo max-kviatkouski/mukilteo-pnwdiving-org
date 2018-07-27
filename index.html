@@ -1,6 +1,11 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+    <meta property="og:url" content="http://mukilteo.pnwdiving.org/"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Mukilteo Current Meter Project"/>
+    <meta property="og:description" content="An attempt to build a cheap DYI current meter, establish regular mesurements of current at Mukilteo T-Dock, use that data to predict diving conditions."/>
+    <meta property="og:image" content="http://mukilteo.pnwdiving.org/img/mukilteo-t-dock.jpg"/>
     <title>DYI Current Meter for Mukilteo T-Doc</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -22,14 +27,25 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122571584-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
+
         function gtag() {
             dataLayer.push(arguments);
         }
+
         gtag('js', new Date());
         gtag('config', 'UA-122571584-1');
     </script>
 </head>
 <body>
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1';
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <!-- Banner -->
 <section id="banner">
@@ -104,23 +120,31 @@
         <hr class="major"/>
 
         <!--Chart section-->
-        <h2>Charts</h2>
-        <p>
-            <ul>
-                <li>This is a data from a very first test deployment for a few days.</li>
-                <li>Positive tilt angle means current going to ferry. Negative angle - going to the Oil Dock.</li>
-                <li>Meter was not calibrated. So the best I can tell now is only tilt angle from some "zero position".</li>
-                <li>0.2kt zone was identified by comparing underwater current during a dive and meter data. Current speed was estimated by letting a tiny piece of kelp flow along a tape measure I had with me and measuring the time it took it to travel some distance.</li>
-            </ul>
-        </p>
+        <div>
+            <h2 style="float: left">Charts</h2>
+            <div style="float: right">
+                <div class="fb-like" data-href="http://mukilteo.pnwdiving.org/" data-layout="standard"
+                     data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+            </div>
+            <div style="clear: both"/>
+        </div>
+        <ul>
+            <li>This is a data from a very first test deployment for a few days.</li>
+            <li>Positive tilt angle means current going to ferry. Negative angle - going to the Oil Dock.</li>
+            <li>Meter was not calibrated. So the best I can tell now is only tilt angle from some "zero position".</li>
+            <li>0.2kt zone was identified by comparing underwater current during a dive and meter data. Current speed
+                was estimated by letting a tiny piece of kelp flow along a tape measure I had with me and measuring the
+                time it took it to travel some distance.
+            </li>
+        </ul>
         <div class="row 200%">
             <div class="6u 12u$(medium)">
                 <label for="day">Select a day</label>
-                    <select id="day" name="day" class="pretty" onchange="loadChart(value)">
-                        <option value="2018-07-20">2018-07-20, Friday</option>
-                        <option value="2018-07-21">2018-07-21, Saturday</option>
-                        <option value="2018-07-22">2018-07-22, Sunday</option>
-                    </select>
+                <select id="day" name="day" class="pretty" onchange="loadChart(value)">
+                    <option value="2018-07-20">2018-07-20, Friday</option>
+                    <option value="2018-07-21">2018-07-21, Saturday</option>
+                    <option value="2018-07-22">2018-07-22, Sunday</option>
+                </select>
             </div>
             <div class="6u$ 12u$(medium)"></div>
         </div>
@@ -133,7 +157,7 @@
 <!-- Footer -->
 <footer id="footer">
     <div class="copyright">
-        Project page: <a href="https://hackaday.io/project/158083-cheap-underwater-tilt-current-sensor">https://hackaday.io/project/158083-cheap-underwater-tilt-current-sensor</a>.
+        Project page: <a href="https://hackaday.io/project/158083-cheap-underwater-tilt-current-sensor">https://hackaday.io/project/158083-cheap-underwater-tilt-current-sensor</a>.<br/>
         Contact us: please post a comment on the project page above ^^^
     </div>
 </footer>
