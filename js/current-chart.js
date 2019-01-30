@@ -1,5 +1,5 @@
-// var DOMAIN = 'http://mukilteo.pnwdiving.org'
-var DOMAIN = 'http://localhost:63342/pyboard-current-meter-logger'
+var DOMAIN = 'http://mukilteo.pnwdiving.org'
+// var DOMAIN = 'http://localhost:63342/pyboard-current-meter-logger'
 
 function loadChart(day) {
     var myChart = Highcharts.chart('container', {
