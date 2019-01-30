@@ -60,11 +60,30 @@ function loadChart(day) {
 }
 
 $(function () {
+    var availableDays;
+    $.ajax({
+        url: DOMAIN + '/data/reports/report-index.json',
+        async: false,
+        success: function(data, status, jqXHR) {
+            availableDays = data;
+        }
+    });
     loadChart('2018-07-20')
     $(function () {
         $("#day").datepicker({
             showOtherMonths: true,
-            selectOtherMonths: true
+            selectOtherMonths: true,
+            dateFormat: 'yy-mm-dd',
+            onSelect: function(dateText, inst) {
+                loadChart(dateText);
+            },
+            beforeShowDay: function(date) {
+                if (availableDays.includes(date.toISOString().split('T')[0])) {
+                    return [true, '', ''];
+                } else {
+                    return [false, '', ''];
+                }
+            }
         });
     });
 });
