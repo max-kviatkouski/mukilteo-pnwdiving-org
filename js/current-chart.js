@@ -78,21 +78,21 @@ $(function () {
     var availableDays;
     $.ajax({
         url: DOMAIN + '/data/reports/report-index.json',
-        async: false,
+        async: true,
         success: function(data, status, jqXHR) {
             availableDays = data;
             availableDays.sort();
+            lastAvailableDay = availableDays[availableDays.length - 1];
+            $("#day").datepicker('setDate', lastAvailableDay);
+            $("#day").datepicker('option', 'currentText', lastAvailableDay);
+            loadChart(lastAvailableDay);
         }
     });
-    lastAvailableDay = availableDays[availableDays.length - 1];
-    loadChart(lastAvailableDay);
     $(function () {
         $("#day").datepicker({
             showOtherMonths: true,
             selectOtherMonths: true,
             dateFormat: 'yy-mm-dd',
-            currentText: lastAvailableDay,
-            defaultDate: lastAvailableDay,
             onSelect: function(dateText, inst) {
                 loadChart(dateText);
             },
@@ -105,6 +105,5 @@ $(function () {
             }
         });
 
-        $("#day").datepicker('setDate', lastAvailableDay);
     });
 });
