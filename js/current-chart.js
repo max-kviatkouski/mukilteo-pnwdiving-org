@@ -1,3 +1,6 @@
+// var DOMAIN = 'http://mukilteo.pnwdiving.org'
+var DOMAIN = 'http://localhost:63342/pyboard-current-meter-logger'
+
 function loadChart(day) {
     var myChart = Highcharts.chart('container', {
         chart: {
@@ -7,7 +10,7 @@ function loadChart(day) {
             text: 'Meter measurements vs. Glendale station tide predictions'
         },
         data: {
-            csvURL: 'http://mukilteo.pnwdiving.org/data/reports/' + day + '.csv',
+            csvURL: DOMAIN + '/data/reports/' + day + '.csv',
             beforeParse: function (csv) {
                 return csv.replace(/\n\n/g, '\n');
             }
@@ -58,5 +61,10 @@ function loadChart(day) {
 
 $(function () {
     loadChart('2018-07-20')
-    $('.pretty').prettyDropdown();
+    $(function () {
+        $("#day").datepicker({
+            showOtherMonths: true,
+            selectOtherMonths: true
+        });
+    });
 });
