@@ -70,6 +70,10 @@ function loadChart(day) {
     });
 }
 
+function getYMD(date) {
+    return date.toISOString().split('T')[0];
+}
+
 $(function () {
     var availableDays;
     $.ajax({
@@ -77,24 +81,30 @@ $(function () {
         async: false,
         success: function(data, status, jqXHR) {
             availableDays = data;
+            availableDays.sort();
         }
     });
-    loadChart('2018-07-20')
+    lastAvailableDay = availableDays[availableDays.length - 1];
+    loadChart(lastAvailableDay);
     $(function () {
         $("#day").datepicker({
             showOtherMonths: true,
             selectOtherMonths: true,
             dateFormat: 'yy-mm-dd',
+            currentText: lastAvailableDay,
+            defaultDate: lastAvailableDay,
             onSelect: function(dateText, inst) {
                 loadChart(dateText);
             },
             beforeShowDay: function(date) {
-                if (availableDays.includes(date.toISOString().split('T')[0])) {
+                if (availableDays.includes(getYMD(date))) {
                     return [true, '', ''];
                 } else {
                     return [false, '', ''];
                 }
             }
         });
+
+        $("#day").datepicker('setDate', lastAvailableDay);
     });
 });
