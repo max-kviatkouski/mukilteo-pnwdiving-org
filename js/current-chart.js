@@ -25,16 +25,26 @@ function loadChart(day) {
             title: {
                 text: 'Tilt angle (degrees)'
             },
+            plotLines: [{
+                value: 0,
+                color: 'grey',
+                width: 3,
+                label: {
+                    text: 'Zero tide/current'
+                }
+            }],
             lineColor: 'rgb(124, 181, 236)',
             lineWidth: 2,
-            max: 45,
+            min: -20,
+            max: 30,
+            // endOnTick: false,
             visible: true,
             plotBands: [{
                 from: 5,
                 to: 10,
                 color: 'rgba(255, 243, 186, 0.4)',
                 label: {
-                    text: 'Approximately 0.2kt',
+                    text: 'Approximately 0.2kt to Ferry',
                     style: {
                         color: '#606060'
                     }
@@ -46,6 +56,7 @@ function loadChart(day) {
             },
             lineColor: 'rgb(67, 67, 72)',
             lineWidth: 2,
+            min: -4,
             max: 14,
             opposite: true,
             visible: true
